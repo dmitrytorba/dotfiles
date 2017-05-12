@@ -3,4 +3,4 @@ style "font"
   font_name = "Arial Narrow 14"
 }
 widget_class "*" style "font"
-gtk-font-name = "Arial Narrow 14”
+gtk-font-name = "Arial Narrow 14"
