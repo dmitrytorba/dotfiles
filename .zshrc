@@ -11,7 +11,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/share/pear/bin
 
-source dotfiles/.zshfun
+source dotfiles/func.zsh
 
 # git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
