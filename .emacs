@@ -90,12 +90,13 @@
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
-; use IPython
-(setq-default py-shell-name "ipython")
-(setq-default py-which-bufname "IPython")
+
+;use IPython
+; (setq-default py-shell-name "ipython")
+; (setq-default py-which-bufname "IPython")
 ; use the wx backend, for both mayavi and matplotlib
-(setq py-python-command-args
-  '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
+; (setq py-python-command-args
+; '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
 
 ;; CUSTOM KEYS
 ;; --------------------------------------
