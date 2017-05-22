@@ -26,7 +26,8 @@
         elpy
         company-go
         flycheck
-        nginx-mode))
+        nginx-mode
+        evil))
 
 (package-install-selected-packages)
 
@@ -107,6 +108,7 @@
           (lambda ()
             (local-set-key "\C-n" 'outline-next-visible-heading)
             (local-set-key "\C-p" 'outline-previous-visible-heading)
+            (local-set-key "\C-i" 'outline-up-heading)
             (local-set-key "\C-l" 'org-demote-subtree)
             (local-set-key "\C-h" 'org-promote-subtree)
             (local-set-key "\C-k" 'org-move-subtree-up)
@@ -150,3 +152,14 @@
 
 ;; Delete a line (aka most powerful tool)
 (global-set-key (kbd "C-d") 'kill-whole-line)
+
+(require 'evil)
+(evil-mode 1)
+
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 
 # variables
 export GOPATH=$HOME/golang
+export LC_ALL="C"
 
 export MAVEN_OPTS="-Xmx6g -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
 
@@ -13,5 +14,6 @@ export PATH=$PATH:/usr/local/share/pear/bin
 
 source dotfiles/func.zsh
 
-# git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+# https://github.com/sorin-ionescu/prezto
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
