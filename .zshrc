@@ -12,7 +12,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/share/pear/bin
 
-source dotfiles/func.zsh
+source ~/dotfiles/func.zsh
 
 # https://github.com/sorin-ionescu/prezto
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
