@@ -27,7 +27,9 @@
         company-go
         flycheck
         nginx-mode
-        evil))
+        evil
+	lua-mode
+	vue-mode))
 
 (package-install-selected-packages)
 
