@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+cd ~
 ln -s dotfiles/.tmux.conf .
 ln -s dotfiles/.emacs .
 ln -s dotfiles/.zshrc .
