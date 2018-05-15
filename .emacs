@@ -29,7 +29,8 @@
         nginx-mode
         evil
 	lua-mode
-	vue-mode))
+	vue-mode
+	projectile))
 
 (package-install-selected-packages)
 
@@ -81,7 +82,18 @@
 (setq real-auto-save-interval 5) ;; in seconds
 (add-hook 'text-mode-hook 'real-auto-save-mode)
 (add-hook 'prog-mode-hook 'real-auto-save-mode)
-      
+
+;; Backups
+(setq
+   backup-by-copying t      ; don't clobber symlinks
+   backup-directory-alist
+    '(("." . "~/.emacs.saves/"))    ; don't litter my fs tree
+   delete-old-versions t
+   kept-new-versions 6
+   kept-old-versions 2
+   version-control t)       ; use versioned backups
+
+
 ;; Dont ask about following links to git repos
 (setq vc-follow-symlinks nil)
 
@@ -156,10 +168,12 @@
 ;; Delete a line (aka most powerful tool)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 
+;; vim emulation
 (require 'evil)
 (evil-mode 1)
 
-
+;; project tools
+(projectile-global-mode)
 
 
 

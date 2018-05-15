@@ -1,8 +1,8 @@
 
 # variables
 export GOPATH=$HOME/golang
-export LC_ALL="C"
-
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 export MAVEN_OPTS="-Xmx6g -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
 
 # path
