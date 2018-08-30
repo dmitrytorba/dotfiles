@@ -14,7 +14,7 @@ export PATH=$PATH:/usr/local/share/pear/bin
 
 source ~/dotfiles/func.zsh
 
-source ~/torch/install/bin/torch-activate
+[[ -a ~/torch ]] && source ~/torch/install/bin/torch-activate
 
 # https://github.com/sorin-ionescu/prezto
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
