@@ -11,14 +11,14 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/share/pear/bin
+export PATH=$PATH:/home/d/.npm-global/bin
 
 source ~/dotfiles/func.zsh
 
 [[ -a ~/torch ]] && source ~/torch/install/bin/torch-activate
 
 # https://github.com/sorin-ionescu/prezto
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
+[[ -a ~/.zprezto ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
