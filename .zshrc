@@ -17,11 +17,13 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/share/pear/bin
 export PATH=$PATH:/home/d/.npm/bin
+export PATH=$PATH:/home/d/.local/bin
+export PATH=$PATH:/home/d/liquibase
 
 source ~/dotfiles/func.zsh
 
 [[ -a ~/torch ]] && source ~/torch/install/bin/torch-activate
-
+[[ -a ~/.cargo ]] && export PATH=$PATH:$HOME/.cargo/bin
 # https://github.com/sorin-ionescu/prezto
 [[ -a ~/.zprezto ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
@@ -32,3 +34,9 @@ export NVM_DIR="$HOME/.nvm"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 [[ -a .keys.zsh ]] && source .keys.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/d/.sdkman"
+[[ -s "/home/d/.sdkman/bin/sdkman-init.sh" ]] && source "/home/d/.sdkman/bin/sdkman-init.sh"
+
+[ -s "/home/d/.jabba/jabba.sh" ] && source "/home/d/.jabba/jabba.sh"
