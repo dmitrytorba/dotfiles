@@ -4,6 +4,7 @@ export GOPATH=$HOME/golang
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 export MAVEN_OPTS="-Xmx6g -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
+export GRADLE_HOME=/opt/gradle/gradle-6.8.1
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
@@ -19,6 +20,8 @@ export PATH=$PATH:/usr/local/share/pear/bin
 export PATH=$PATH:/home/d/.npm/bin
 export PATH=$PATH:/home/d/.local/bin
 export PATH=$PATH:/home/d/liquibase
+export PATH=$PATH:/home/d/.config/Code/User/globalStorage/evaera.vscode-rojo/rojo-v0.5.4/bin
+export PATH=$PATH:${GRADLE_HOME}/bin
 
 source ~/dotfiles/func.zsh
 
