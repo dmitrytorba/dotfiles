@@ -136,12 +136,12 @@ zstyle ':prezto:module:prompt' theme 'redhat'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
+# https://github.com/zsh-users/zsh-syntax-highlighting/issues/171
  zstyle ':prezto:module:syntax-highlighting' highlighters \
    'main' \
    'brackets' \
    'pattern' \
    'line' \
-   'cursor' \
    'root'
 
 # Set syntax highlighting styles.
