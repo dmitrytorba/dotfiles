@@ -53,3 +53,6 @@ if [ -f '/home/d/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/d/google-
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+eval "$(starship init zsh)"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
