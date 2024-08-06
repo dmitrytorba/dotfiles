@@ -38,6 +38,7 @@ export NVM_DIR="$HOME/.nvm"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 [[ -a .keys.zsh ]] && source .keys.zsh
+[[ -a .mac.zshrc ]] && source .mac.zshrc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/d/.sdkman"
