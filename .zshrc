@@ -38,7 +38,6 @@ export NVM_DIR="$HOME/.nvm"
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 [[ -a .keys.zsh ]] && source .keys.zsh
-[[ -a .mac.zshrc ]] && source .mac.zshrc
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/d/.sdkman"
@@ -57,6 +56,7 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 eval "$(starship init zsh)"
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export TERM=xterm-256color
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -71,9 +71,11 @@ bindkey "$terminfo[kcuu1]" history-beginning-search-backward-end
 bindkey "$terminfo[kcud1]" history-beginning-search-forward-endexport
 
 #pyenv
-PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+if [[ -d "$HOME/.pyenv" ]]; then
+  PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init - zsh)"
+fi
 
 # pnpm
 export PNPM_HOME="/home/d/.local/share/pnpm"
@@ -82,3 +84,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Must be last to override things above
+[[ -a .mac.zshrc ]] && source .mac.zshrc
