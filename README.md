@@ -1,3 +1,10 @@
+# Install
+
+```sh
+sudo apt install tmux emacs zsh
+./dotfiles/install.zsh
+```
+
 # Manual Configurations
 
 ## Gnome Tweaks

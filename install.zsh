@@ -7,11 +7,15 @@ ln -s dotfiles/.zshrc .
 git config --global user.email 'dmitrytorba@gmail.com'
 git config --global user.name 'Dmitry Torba'
 
-sudo apt-get install -y zsh
-
 sudo chsh -s $(which zsh) $USER
 
+# Install nerd fonts
+bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
+
+# Install starship
 curl -sS https://starship.rs/install.sh | sh
+
+# Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
 source ~/.zshrc
