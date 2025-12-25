@@ -1,3 +1,5 @@
+autoload -Uz compinit
+compinit
 
 # variables
 export GOPATH=$HOME/golang
