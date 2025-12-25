@@ -1,8 +1,15 @@
 [Unit]
 Description=Syncthing
+ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --gui-address=0.0.0.0:8343
+After = network.target
 
 [Service]
-ExecStart=/usr/bin/syncthing
+ExecStart=/usr/bin/syncthing serve --no-browser --no-restart --gui-address=0.0.0.0:8343
+Restart = on-failure
+RestartSec=1
+SuccessExitStatus=3 4
+RestartForceExitStatus=3 4
+WorkingDirectory = /home/d
 
 [Install]
 WantedBy=default.target
