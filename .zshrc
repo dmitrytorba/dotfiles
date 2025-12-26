@@ -39,6 +39,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
+eval "$(mise activate zsh)"
+
 [[ -a .keys.zsh ]] && source .keys.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -70,7 +72,7 @@ autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "$terminfo[kcuu1]" history-beginning-search-backward-end
-bindkey "$terminfo[kcud1]" history-beginning-search-forward-endexport
+bindkey "$terminfo[kcud1]" history-beginning-search-forward-end
 
 #pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
