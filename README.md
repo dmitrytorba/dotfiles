@@ -1,3 +1,22 @@
+# Install
+
+## New machine
+
+```sh
+sudo apt install tmux emacs zsh
+./dotfiles/install.zsh
+```
+
+## Systemd
+
+```sh
+mkdir -p .config/systemd/user
+cp dotfiles/.config/systemd/user/syncthing.service .config/systemd/user/
+systemctl --user enable syncthing
+systemctl --user start syncthing
+systemctl --user status syncthing
+```
+
 # Manual Configurations
 
 ## Gnome Tweaks
