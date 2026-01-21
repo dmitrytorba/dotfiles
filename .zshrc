@@ -1,4 +1,5 @@
 
+
 # variables
 export GOPATH=$HOME/golang
 export LC_ALL=C.UTF-8
@@ -23,6 +24,17 @@ export PATH=$PATH:$HOME/.dotnet
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+alias n="nvim"
+
+# pnpm
+export PNPM_HOME="/home/d/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+[[ -a .mac.zshrc ]] && source .mac.zshrc
 
 source ~/dotfiles/func.zsh
 
@@ -77,13 +89,4 @@ if [[ -d "$HOME/.pyenv" ]]; then
   eval "$(pyenv init - zsh)"
 fi
 
-# pnpm
-export PNPM_HOME="/home/d/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
-# Must be last to override things above
-[[ -a .mac.zshrc ]] && source .mac.zshrc

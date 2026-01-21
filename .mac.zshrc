@@ -1,3 +1,5 @@
+autoload -Uz compinit
+compinit
 
 # pnpm
 export PNPM_HOME="/Users/dmitry.torba/Library/pnpm"

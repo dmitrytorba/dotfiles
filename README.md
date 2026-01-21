@@ -29,3 +29,14 @@
 
 - Appearance
   - Dark
+
+
+
+### Keyboard > Keyboard Shortcuts > Modifier Keys > Karabiner Virtual Keyboard
+
+
+
+#### Karabiner-Elements for External Keyboard
+
+Modifier Keys > caps_lock ->  Modifier Keys > left_command
+Modifier Keys > left_option ->  Modifier Keys > left_command
