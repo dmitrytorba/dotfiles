@@ -51,7 +51,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-eval "$(mise activate zsh)"
+command -v mise >/dev/null && eval "$(mise activate zsh)"
 
 [[ -a .keys.zsh ]] && source .keys.zsh
 
@@ -70,8 +70,9 @@ if [ -f '/home/d/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/d/google-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-eval "$(starship init zsh)"
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+command -v starship >/dev/null && eval "$(starship init zsh)"
+[[ -f ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+  source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export TERM=xterm-256color
 
 HISTFILE=~/.zsh_history

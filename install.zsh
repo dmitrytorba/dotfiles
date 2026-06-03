@@ -1,14 +1,28 @@
 #!/usr/bin/env zsh
 
 cd ~
-ln -s dotfiles/.tmux.conf .
-ln -s dotfiles/.emacs .
-ln -s dotfiles/.zshrc .
-mkdir -p ~/.config/ghostty && ln -s ~/dotfiles/ghostty/config ~/.config/ghostty/config
-git config --global user.email 'dmitrytorba@gmail.com'
+
+ln -sf dotfiles/.tmux.conf .
+ln -sf dotfiles/.emacs .
+ln -sf dotfiles/.zshrc .
+
+if [[ "$(uname)" == Darwin ]]; then
+  ln -sf dotfiles/.tmux.mac.conf .
+  ln -sf dotfiles/.mac.zshrc .
+
+  ghostty_dir="${HOME}/Library/Application Support/com.mitchellh.ghostty"
+  mkdir -p "$ghostty_dir"
+  ln -sf ~/dotfiles/ghostty/config "${ghostty_dir}/config"
+else
+  mkdir -p ~/.config/ghostty
+  ln -sf ~/dotfiles/ghostty/config ~/.config/ghostty/config
+fi
+
+read 'github_email?GitHub email: '
+git config --global user.email "$github_email"
 git config --global user.name 'Dmitry Torba'
 
-chsh -s $(which zsh) 
+chsh -s $(which zsh)
 
 # Install nerd fonts
 bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/nerd-fonts-installer/main/install.sh)"
@@ -17,6 +31,8 @@ bash -c  "$(curl -fsSL https://raw.githubusercontent.com/officialrajdeepsingh/ne
 curl -sS https://starship.rs/install.sh | sh
 
 # Install zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+[[ -d ~/.zsh/zsh-autosuggestions ]] || \
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 
+export PATH="$HOME/.local/bin:$PATH"
 source ~/.zshrc
