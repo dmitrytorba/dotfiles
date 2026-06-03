@@ -41,21 +41,27 @@ systemctl --user status syncthing
 
 ### Trackpad > Scroll & Zoom
 
-- Natural Scrolling
-  - Disabled
+- Natural Scrolling: Disabled
 
 ### Appearance
 
-- Appearance
-  - Dark
-
-
+- Appearance: Dark
 
 ### Keyboard > Keyboard Shortcuts > Modifier Keys > Karabiner Virtual Keyboard
 
-
+- `caps_lock` → `left_command`
+- `left_option` → `left_command`
 
 #### Karabiner-Elements for External Keyboard
 
-Modifier Keys > caps_lock ->  Modifier Keys > left_command
-Modifier Keys > left_option ->  Modifier Keys > left_command
+- `caps_lock` → `left_command`
+- `left_option` → `left_command`
+
+## Wispr Flow
+
+### Mouse Bindings
+
+| Action | Button |
+|--------|--------|
+| Hands-free mode | Mouse 4 |
+| Enter rebind | Mouse 5 |

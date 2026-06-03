@@ -4,6 +4,7 @@ cd ~
 ln -s dotfiles/.tmux.conf .
 ln -s dotfiles/.emacs .
 ln -s dotfiles/.zshrc .
+mkdir -p ~/.config/ghostty && ln -s ~/dotfiles/ghostty/config ~/.config/ghostty/config
 git config --global user.email 'dmitrytorba@gmail.com'
 git config --global user.name 'Dmitry Torba'
 
