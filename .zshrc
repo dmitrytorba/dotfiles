@@ -12,13 +12,12 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 
 # path
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/share/pear/bin
 export PATH=$PATH:/home/d/.npm/bin
-export PATH=$PATH:/home/d/.local/bin
 export PATH=$PATH:/home/d/liquibase
 export PATH=$PATH:/home/d/.config/Code/User/globalStorage/evaera.vscode-rojo/rojo-v0.5.4/bin
 export PATH=$PATH:${GRADLE_HOME}/bin
@@ -61,12 +60,6 @@ export SDKMAN_DIR="/home/d/.sdkman"
 
 [ -s "/home/d/.jabba/jabba.sh" ] && source "/home/d/.jabba/jabba.sh"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/d/google-cloud-sdk/path.zsh.inc' ]; then . '/home/d/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/d/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/d/google-cloud-sdk/completion.zsh.inc'; fi
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
@@ -95,3 +88,22 @@ if [[ -d "$HOME/.pyenv" ]]; then
 fi
 
 
+
+# bun completions
+[ -s "/Users/dmitry.torba/.bun/_bun" ] && source "/Users/dmitry.torba/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# devsai tab completion
+fpath=(~/.zsh/completions $fpath)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dmitry.torba/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dmitry.torba/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dmitry.torba/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dmitry.torba/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+export PATH="$HOME/.local/bin:$PATH"
