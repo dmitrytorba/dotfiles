@@ -7,7 +7,11 @@ ln -sf dotfiles/.emacs .
 ln -sf dotfiles/.zshrc .
 
 if [[ "$(uname)" == Darwin ]]; then
-  ln -sf dotfiles/.tmux.mac.conf .
+  if [[ "$(hostname)" == *Mac-Studio* ]]; then
+    ln -sf dotfiles/.tmux.mac-studio.conf .tmux.mac-studio.conf
+  else
+    ln -sf dotfiles/.tmux.mac.conf .tmux.mac.conf
+  fi
   ln -sf dotfiles/.mac.zshrc .
 
   ghostty_dir="${HOME}/Library/Application Support/com.mitchellh.ghostty"

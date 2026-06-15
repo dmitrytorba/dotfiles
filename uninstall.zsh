@@ -16,6 +16,7 @@ remove_dotfiles_link .zshrc
 
 if [[ "$(uname)" == Darwin ]]; then
   remove_dotfiles_link .tmux.mac.conf
+  remove_dotfiles_link .tmux.mac-studio.conf
   remove_dotfiles_link .mac.zshrc
 
   ghostty_config="${HOME}/Library/Application Support/com.mitchellh.ghostty/config"
